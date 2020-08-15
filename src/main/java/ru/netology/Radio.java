@@ -5,9 +5,8 @@ public class Radio {
     private int minStation = 0; // Минимальная станция
     private int currentStation; // Выбранная станция
     private int numberStation; // Количество станций
-
-    private int maxVolume; // Максимальная громкость
-    private int minVolume; // Минимальная громкость
+    private int maxVolume = 100; // Максимальная громкость
+    private int minVolume = 0; // Минимальная громкость
     private int currentVolume; // Выбранная громкость
 
     // Опции Радиостанций
@@ -26,7 +25,9 @@ public class Radio {
         if (numberStation < minStation) {
             this.numberStation = 0;
         }
-        this.numberStation = numberStation - 1;
+        if (numberStation <= maxStation & numberStation >= minStation) {
+            this.numberStation = numberStation - 1;
+        }
     }
 
     public void setMaxStation(int maxStation) {

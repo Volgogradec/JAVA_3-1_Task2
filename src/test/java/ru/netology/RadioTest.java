@@ -188,4 +188,28 @@ class RadioTest {
         assertEquals(7, radio.getCurrentVolume());
     }
 
+    @Test
+    public void setNumberStationTestNormalNumber(){
+        Radio radio = new Radio();
+        radio.setNumberStation(9);
+        assertEquals(8,radio.getNumberStation());
+    }
+
+    @Test
+    public void setNumberStationTestOverMaxNumber(){
+        Radio radio = new Radio();
+        radio.setMaxStation(9);
+        radio.setMinStation(0);
+        radio.setNumberStation(19);
+        assertEquals(9,radio.getNumberStation());
+    }
+
+    @Test
+    public void setNumberStationTestUnderMinNumber(){
+        Radio radio = new Radio();
+        radio.setMaxStation(9);
+        radio.setMinStation(0);
+        radio.setNumberStation(-4);
+        assertEquals(0,radio.getNumberStation());
+    }
 }
