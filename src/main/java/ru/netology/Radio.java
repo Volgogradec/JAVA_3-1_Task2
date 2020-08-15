@@ -1,5 +1,13 @@
 package ru.netology;
 
+import lombok.*;
+
+@NoArgsConstructor
+@AllArgsConstructor
+//@Data
+@Getter
+@Setter
+
 public class Radio {
     private int maxStation = 9; // Максмимальная станция
     private int minStation = 0; // Минимальная станция
@@ -10,14 +18,6 @@ public class Radio {
     private int currentVolume; // Выбранная громкость
 
     // Опции Радиостанций
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public int getNumberStation() {
-        return numberStation;
-    }
-
     public void setNumberStation(int numberStation) {
         if (numberStation > maxStation) {
             this.numberStation = 9;
@@ -28,22 +28,6 @@ public class Radio {
         if (numberStation <= maxStation & numberStation >= minStation) {
             this.numberStation = numberStation - 1;
         }
-    }
-
-    public void setMaxStation(int maxStation) {
-        this.maxStation = maxStation;
-    }
-
-    public int getMinStation() {
-        return minStation;
-    }
-
-    public void setMinStation(int minStation) {
-        this.minStation = minStation;
-    }
-
-    public int getCurrentStation() {
-        return currentStation;
     }
 
     public void setCurrentStation(int currentStation) {
@@ -86,26 +70,6 @@ public class Radio {
     }
 
     // Опции Громкости
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume > maxVolume) {
             return;
